@@ -33,7 +33,7 @@ const ContactForm = () => {
       reset();
       setShowPopup(true);
     } catch (error) {
-      setPopupMessage("An error occurred. Please try again.");
+      setPopupMessage("An error occurred. Please try again." + error);
       setShowPopup(true);
     }
   };
