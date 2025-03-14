@@ -41,7 +41,15 @@ export const POST = async (request: Request) => {
 export const DELETE = async (request: Request) => {
   try {
     await connect();
-    const contactId = request.query?.id; // Handle query properly here
+
+    // Extract query params from URL
+    const { searchParams } = new URL(request.url);
+    const contactId = searchParams.get("id");
+
+    if (!contactId) {
+      return new NextResponse("Contact ID is required", { status: 400 });
+    }
+
     await Contact.findByIdAndDelete(contactId);
     return new NextResponse("Message deleted successfully", { status: 200 });
   } catch (error: unknown) {
@@ -53,3 +61,4 @@ export const DELETE = async (request: Request) => {
     return new NextResponse("Unknown error occurred", { status: 500 });
   }
 };
+
