@@ -34,12 +34,13 @@ const ContactUs = () => {
               <div className="max-w-3xl mb-6">
                 <h1 className="heading">Just Say Hello!</h1>
               </div>
-              <div className="relative md:w-3/4 py-10 rounded-xl overflow-hidden h-[70vh] mb-6">
+              <div className="relative max-w-4xl mt-16 mb-6 rounded-3xl overflow-hidden shadow-2xl shadow-gray-500 aspect-[16/9] md:aspect-auto h-[50vh] md:h-[75vh] lg:h-[85vh] w-full">
                 <Image
-                  src="/assets/about.webp" // Ensure it's inside 'public/'
-                  alt="Contact Us"
-                  fill
-                  className="object-cover"
+                  src="/assets/about.webp"
+                  alt="Services"
+                  layout="fill"
+                  objectFit="cover"
+                  className="w-full h-full"
                 />
               </div>
 
@@ -117,7 +118,7 @@ const ContactUs = () => {
                           href="mailto:hello@example.com"
                           className="text-primary hover:underline"
                         >
-                          chakracodeservices@gmail.com
+                          info@mandaladevhub.com
                         </a>
                       </li>
                       <li>
@@ -142,7 +143,7 @@ const ContactUs = () => {
         </div>
       </section>
       <div className="flex justify-center items-center py-5">
-        <p className="text-sm">
+        <p className="text-xs md:text-sm">
           &copy; 2025 riddheshpadma.dev . All rights reserved.
         </p>
       </div>

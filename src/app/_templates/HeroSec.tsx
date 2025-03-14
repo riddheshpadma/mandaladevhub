@@ -26,7 +26,7 @@ const HeroSec = (props) => {
           <h1 className="text-4xl md:text-6xl font-bold text-white mt-10">
             {props.head}
           </h1>
-          <p className="mt-2 text-sm md:text-xl text-gray-200">
+          <p className="mt-2 text-sm md:text-xl text-gray-200 text-center">
             {props.subhead}
           </p>
         </div>

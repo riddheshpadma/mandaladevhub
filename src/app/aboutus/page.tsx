@@ -14,52 +14,75 @@ const page = () => {
       </section>
 
       <section className="bg-[#FAFAFA]">
-        <div className="flex flex-col justify-center items-center bg-primaryColor h-screen text-white">
-          <h1 className="text-3xl md:text-5xl font-bold">
-            Aproach and Philosophy
+        {/* Hero Section */}
+        <div className="flex flex-col justify-center items-center h-[50vh] bg-primaryColor p-10 md:p-20 text-white text-center">
+          <h1 className="text-2xl md:text-5xl font-bold">
+            Approach and Philosophy
           </h1>
-          <p className="text-sm md:text-lg mt-2 max-w-2xl text-center">
+          <p className="text-sm md:text-lg mt-2 max-w-2xl">
             Emphasize your commitment to deadlines, quality, and tailored
             solutions.
           </p>
           <Link href="/getstarted">
-            <button className="px-8 py-3 mt-10 bg-white hover:bg-tirtaryColor text-primaryColor hover:text-white transition-all ease-in-out duration-500">
+            <button className="px-8 py-3 mt-4 bg-white hover:bg-tirtaryColor text-primaryColor hover:text-white transition-all ease-in-out duration-500">
               Let's Build Together
             </button>
           </Link>
         </div>
-        <div className="flex flex-col md:flex-row justify-center items-center bg-white text-primaryColor">
-          <div className="flex-1 p-10">
-            <p className="md:pr-20 mb-4">
-              At <span className="font-bold">Chakra Code Services</span> we are
-              passionate about turning ideas into reality through innovative
+
+        {/* About Section */}
+        <div className="flex flex-col md:flex-row justify-center items-center bg-[#FAFAFA] text-primaryColor">
+          {/* Text Content */}
+          <div className="flex-1 p-6 md:p-10">
+            <p className="md:pr-20 mb-4 text-sm md:text-base">
+              At <span className="font-bold">Mandala DevHub Services</span>, we
+              are passionate about turning ideas into reality through innovative
               technology solutions. Founded with the vision to empower
               businesses, we specialize in delivering high-quality software and
               application development services that cater to diverse needs,
               whether you’re a startup seeking to make your mark or an
-              established organization aiming to enhance your digital presence.{" "}
-              <br /> Our team comprises talented developers, designers, and
-              strategists committed to crafting tailored solutions. From web and
-              mobile applications to intuitive UI/UX designs, we prioritize
-              user-centric approaches and cutting-edge technologies to ensure
-              your business achieves its goals effectively.{" "}
+              established organization aiming to enhance your digital presence.
             </p>
-            <p className="md:pr-20  mb-8 ">
+            <p className="md:pr-20 mb-8">
+              Our team comprises talented developers, designers, and strategists
+              committed to crafting tailored solutions. From web and mobile
+              applications to intuitive UI/UX designs, we prioritize
+              user-centric approaches and cutting-edge technologies to ensure
+              your business achieves its goals effectively.
+            </p>
+            <p className="md:pr-20 mb-8">
               Our mission is to help businesses succeed by leveraging
               technology, creating meaningful experiences for users, and
               fostering growth. With a focus on transparency and collaboration,
               we aim to build lasting relationships with our clients.
             </p>
           </div>
-          <div className="flex-1 relative w-full h-[70vh] p-10">
-            <Image src="/assets/about1.jpg" layout="fill" alt="ABout 1" />
+
+          {/* Image Section */}
+          <div className="md:flex-1 relative w-full h-[40vh] md:h-[70vh] p-6 md:p-10 overflow-hidden">
+            <Image
+              src="/assets/about1.jpg"
+              alt="About Us"
+              fill
+              className="object-cover rounded-lg"
+            />
           </div>
         </div>
-        <div className="flex flex-col md:flex-row justify-center items-center bg-white h-screen text-primaryColor">
-          <div className="flex-1 relative w-full h-[70vh] p-10">
-            <Image src="/assets/about2.jpg" layout="fill" alt="ABout 1" />
+
+        {/* Why Choose Us Section */}
+        <div className="flex flex-col-reverse md:flex-row justify-center items-center bg-[#FAFAFA] text-primaryColor px-4 md:px-10">
+          {/* Image Section */}
+          <div className="md:flex-1 relative w-full h-[40vh] md:h-[70vh] p-6 md:p-10 overflow-hidden rounded-lg">
+            <Image
+              src="/assets/about2.jpg"
+              alt="Why Choose Us"
+              fill
+              className="object-cover rounded-lg"
+            />
           </div>
-          <div className="flex-1 p-10">
+
+          {/* Text Content */}
+          <div className="flex-1 p-6 md:p-10 max-w-lg">
             <h3 className="text-3xl font-bold">Why choose us?</h3>
             <ul className="space-y-6 pl-4 mt-4">
               <li>
@@ -84,7 +107,7 @@ const page = () => {
               Let’s shape the future together.
             </p>
             <p className="font-bold mt-4">
-              Chakra Code Services – Transforming ideas into impactful
+              Mandala DevHub Services – Transforming ideas into impactful
               solutions.
             </p>
           </div>

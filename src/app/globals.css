@@ -80,6 +80,10 @@ body {
 
   /* Navbar list items */
   .navItems {
-    @apply p-5 text-lg hover:text-tirtaryColor transform ease-in-out duration-500
+    @apply py-2 px-5 text-base hover:text-tirtaryColor transform ease-in-out duration-500
   }
+
+    .mobile-navigation-item {
+      @apply p-5 text-lg hover:text-tirtaryColor hover:bg-primaryColor transform ease-in-out duration-500
+    }
 }

@@ -1,40 +1,50 @@
 "use client";
 
 import Image from "next/image";
-import Navbar from "../_components/Navbar";
-import ContactUs from "../_components/ContactUs";
+import Navbar from "./Navbar";
+import ContactUs from "./ContactUs";
 import Link from "next/link";
-const page = () => {
+const Landing = () => {
   return (
     <div>
-      <div className="relative h-screen w-full bg-[#181813]">
-        <Image
-          src={"/assets/backgroundhome.jpg"}
-          alt="Background"
-          layout="fill"
-          objectFit="cover"
-          className="absolute opacity-50"
-        />
-        <Navbar />
-        <section className="h-screen flex items-center justify-center text-center px-6 text-white relative">
-          <div className="max-w-3xl">
-            <h1 className="text-5xl font-bold leading-tight">
-              Building. Digital. Brilliance.
-            </h1>
-            <p className="mt-4 text-lg">
-              Empowering businesses with innovative tech solutions. Creativity
-              meets technology at
-              <br />
-              <span className="text-4xl font-bold mt-4">Kodify</span>.
-            </p>
-            <Link href="/getstarted">
-              <button className="mt-6 px-6 py-3 bg-white text-black text-lg font-semibold rounded-md hover:bg-gray-200 transition">
-                Let's Grow Together
-              </button>
-            </Link>
+      <div className="min-h-screen bg-pink-50 flex items-end justify-center">
+        <div className="bg-white rounded-t-2xl shadow-lg p-8 w-[95%] h-[85vh]">
+          <div>
+            <Navbar />
           </div>
-        </section>
 
+          <div className="flex flex-col md:flex-row mt-8 items-center">
+            <div className="md:w-1/2 text-center md:text-left">
+              <h1 className="text-4xl font-bold text-[#5C213C] mb-4">
+                We are leading <br />
+                <span className="text-[#5C213C]">
+                  Web Development & Design Company
+                </span>
+              </h1>
+              <p className="text-gray-600 mb-6">
+                At Mandala DevHub, we specialize in delivering high-performance,
+                secure, and scalable software solutions that empower businesses
+                to thrive in the digital era.
+              </p>
+              <Link href="/services">
+                <button className="bg-[#5C213C] text-white px-6 py-2 rounded-full">
+                  Learn More →
+                </button>
+              </Link>
+            </div>
+            <div className="md:w-1/2 mt-8 md:mt-0 flex justify-center">
+              <Image
+                src="/assets/hero-illustration.png"
+                alt="Illustration"
+                width={400}
+                height={300}
+                className="w-80 h-auto"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="relative h-screen w-full bg-[#181813]">
         <section
           id="services"
           className="text-black px-10 py-24 lg:py-40 bg-white"
@@ -67,12 +77,13 @@ const page = () => {
                   </Link>
                 </div>
               </div>
-              <div className="relative max-w-4xl mt-16 rounded-3xl overflow-hidden shadow-2xl shadow-gray-500 h-lvh">
+              <div className="relative max-w-4xl mt-16 rounded-3xl overflow-hidden shadow-2xl shadow-gray-500 aspect-[16/9] md:aspect-auto h-[50vh] md:h-[75vh] lg:h-[85vh] w-full">
                 <Image
                   src="/assets/servicesechome.jpg"
                   alt="Services"
-                  fill
-                  className="object-cover"
+                  layout="fill"
+                  objectFit="cover"
+                  className="w-full h-full"
                 />
               </div>
             </div>
@@ -92,12 +103,13 @@ const page = () => {
               <div className="max-w-3xl mb-4">
                 <h1 className="heading">Aproach and Philosophy</h1>
               </div>
-              <div className="relative max-w-[75%] md:max-w-3xl py-10 h-[80vh] mb-4 ">
+              <div className="relative max-w-4xl mt-16 rounded-3xl overflow-hidden shadow-2xl shadow-gray-500 aspect-[16/9] md:aspect-auto h-[50vh] md:h-[75vh] lg:h-[85vh] w-full">
                 <Image
-                  src="/assets/about.webp" // Ensure the image is inside 'public/' folder
-                  alt="About Section"
-                  fill
-                  className="rounded-2xl object-cover"
+                  src="/assets/about.webp"
+                  alt="Services"
+                  layout="fill"
+                  objectFit="cover"
+                  className="w-full h-full"
                 />
               </div>
 
@@ -143,7 +155,7 @@ const page = () => {
                     Let’s shape the future together.
                   </p>
                   <p className="font-bold mt-4">
-                    Chakra Code Services – Transforming ideas into impactful
+                    Mandala DevHub Services – Transforming ideas into impactful
                     solutions.
                   </p>
                 </div>
@@ -351,4 +363,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Landing;
