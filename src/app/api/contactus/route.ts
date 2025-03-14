@@ -7,10 +7,13 @@ export const GET = async () => {
     await connect();
     const contact = await Contact.find();
     return new Response(JSON.stringify(contact), { status: 201 });
-  } catch (error: any) {
-    return new NextResponse("Error in fetching contact" + error.message, {
-      status: 500,
-    });
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      return new NextResponse("Error in fetching contact: " + error.message, {
+        status: 500,
+      });
+    }
+    return new NextResponse("Unknown error occurred", { status: 500 });
   }
 };
 
@@ -25,19 +28,28 @@ export const POST = async (request: Request) => {
       JSON.stringify({ message: "Message sent", contact: contact.name }),
       { status: 201 }
     );
-  } catch (error:any) {
-    return new NextResponse("Error in sending message" + error.message, { status: error.status})
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      return new NextResponse("Error in sending message: " + error.message, {
+        status: 500,
+      });
+    }
+    return new NextResponse("Unknown error occurred", { status: 500 });
   }
 };
 
 export const DELETE = async (request: Request) => {
-    try {
-      await connect();
-      const contactId = request.query.id;
-      await Contact.findByIdAndDelete(contactId);
-      return new NextResponse("Message deleted successfully", { status: 200 });
-    } catch (error: any) {
-      return new NextResponse("Error in deleting message" + error.message, { status: 500 });
+  try {
+    await connect();
+    const contactId = request.query?.id; // Handle query properly here
+    await Contact.findByIdAndDelete(contactId);
+    return new NextResponse("Message deleted successfully", { status: 200 });
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      return new NextResponse("Error in deleting message: " + error.message, {
+        status: 500,
+      });
     }
-  
-}
+    return new NextResponse("Unknown error occurred", { status: 500 });
+  }
+};

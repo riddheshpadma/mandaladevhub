@@ -11,13 +11,9 @@ const ContactForm = () => {
 
   const onSubmit = async (data) => {
     try {
-      const response = await axios.post(
-        "http://localhost:3000/api/contactus",
-        data,
-        {
-          headers: { "Content-Type": "application/json" },
-        }
-      );
+      const response = await axios.post("/api/contactus", data, {
+        headers: { "Content-Type": "application/json" },
+      });
 
       if (response.status === 201) {
         setPopupMessage(
@@ -29,7 +25,7 @@ const ContactForm = () => {
       reset();
       setShowPopup(true);
     } catch (error) {
-      setPopupMessage("An error occurred. Please try again.");
+      setPopupMessage("An error occurred. Please try again.", error);
       setShowPopup(true);
     }
   };

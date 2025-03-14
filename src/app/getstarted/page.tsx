@@ -22,13 +22,9 @@ const Page = () => {
   const onSubmit = async (data) => {
     setLoading(true);
     try {
-      const response = await axios.post(
-        "http://localhost:3000/api/getstarted",
-        data,
-        {
-          headers: { "Content-Type": "application/json" },
-        }
-      );
+      const response = await axios.post("/api/getstarted", data, {
+        headers: { "Content-Type": "application/json" },
+      });
 
       if (response.status === 201) {
         setStatusMessage("Your request has been submitted successfully!");
@@ -75,11 +71,11 @@ const Page = () => {
               className="w-full max-w-md"
             />
             <h1 className="text-2xl md:text-4xl font-bold">
-              Let's Build Something Incredible Together
+              Let&apos;s Build Something Incredible Together
             </h1>
             <p className="text-lg">
-              We're excited to hear about your vision! Let's kick-start the
-              process by understanding your needs.
+              We&apos;re excited to hear about your vision! Let&apos;s
+              kick-start the process by understanding your needs.
             </p>
             <button
               className="px-12 py-4 bg-tirtaryColor text-primaryColor hover:text-white font-semibold rounded-lg shadow-md hover:bg-primaryColor transition-all duration-700"
@@ -93,7 +89,7 @@ const Page = () => {
         {step > 0 && (
           <div className="flex flex-col items-center p-5 w-full max-w-2xl mx-auto">
             <h1 className="text-2xl md:text-5xl font-bold text-primaryColor mb-6">
-              Let's Get Started Together
+              Let&apos;s Get Started Together
             </h1>
             <div className="w-full bg-gray-200 rounded-full h-2 mb-6">
               <div

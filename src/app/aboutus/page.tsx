@@ -25,7 +25,7 @@ const page = () => {
           </p>
           <Link href="/getstarted">
             <button className="px-8 py-3 mt-4 bg-white hover:bg-tirtaryColor text-primaryColor hover:text-white transition-all ease-in-out duration-500">
-              Let's Build Together
+              Let&apos;s Build Together
             </button>
           </Link>
         </div>
@@ -104,7 +104,7 @@ const page = () => {
               </li>
             </ul>
             <p className="mt-10 font-extrabold text-xl">
-              Let’s shape the future together.
+              Let&apos;s shape the future together.
             </p>
             <p className="font-bold mt-4">
               Mandala DevHub Services – Transforming ideas into impactful

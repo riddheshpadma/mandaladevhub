@@ -3,8 +3,6 @@ import ProcessSteps from "../_components/ProcessSteps";
 import Services from "../_components/Services";
 import HeroSec from "../_templates/HeroSec";
 
-import Image from "next/image";
-
 const page = () => {
   return (
     <div>

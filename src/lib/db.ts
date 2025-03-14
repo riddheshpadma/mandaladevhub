@@ -16,14 +16,17 @@ const connect = async () => {
   }
 
   try {
-    mongoose.connect(MONGODB_URI!, {
-      dbName: "kodify-brandDB",
+    await mongoose.connect(MONGODB_URI!, {
+      dbName: "mandala-brandDB",
       bufferCommands: true,
     });
     console.log("Connected");
-  } catch (err: any) {
-    console.log("Error: ", err);
-    throw new Error("Error: ", err);
+  } catch (err: unknown) {
+    if (err instanceof Error) {
+      console.error("Error: ", err.message);
+      throw new Error(err.message);
+    }
+    throw new Error("Unknown error occurred during database connection");
   }
 };
 
