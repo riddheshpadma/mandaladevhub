@@ -1,6 +1,7 @@
 import connect from "@/lib/db";
 import GetStarted from "../../../lib/modals/getstarted";
 import { NextResponse } from "next/server";
+import mongoose from "mongoose";
 
 export const POST = async (request: Request) => {
   try {
@@ -10,22 +11,27 @@ export const POST = async (request: Request) => {
     await getStarted.save();
     return new NextResponse("GetStarted created successfully", { status: 201 });
   } catch (error: unknown) {
-    if (error instanceof Error) {
-      console.error("Registration error:", error);
-
-      // If error is a Mongoose validation error
-      const validationErrors = (error as any).errors 
-        ? Object.keys((error as any).errors).map((key) => ({
-            field: key,
-            message: (error as any).errors[key].message,
-          }))
-        : null;
+    if (error instanceof mongoose.Error.ValidationError) {
+      const validationErrors = Object.keys(error.errors).map((key) => ({
+        field: key,
+        message: error.errors[key].message,
+      }));
 
       return NextResponse.json(
         {
           message: "Error in creating GetStarted Registration",
-          details: error.message,
           validation: validationErrors,
+        },
+        { status: 400 }
+      );
+    }
+
+    if (error instanceof Error) {
+      console.error("Registration error:", error);
+      return NextResponse.json(
+        {
+          message: "Error in creating GetStarted Registration",
+          details: error.message,
         },
         { status: 500 }
       );
