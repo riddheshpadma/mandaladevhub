@@ -19,7 +19,7 @@ const Page = () => {
   const nextStep = () => setStep((prev) => prev + 1);
   const prevStep = () => setStep((prev) => prev - 1);
 
-  const onSubmit = async (data: Record<string, any>) => {
+  const onSubmit = async (data: Record<string, unknown>) => {
     setLoading(true);
     try {
       const response = await axios.post("/api/getstarted", data, {
