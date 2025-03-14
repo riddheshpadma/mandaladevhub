@@ -1,8 +1,13 @@
 import Image from "next/image";
-
 import Navbar from "../_components/Navbar";
 
-const HeroSec = (props) => {
+interface HeroSecProps {
+  image: string;
+  head: string;
+  subhead: string;
+}
+
+const HeroSec = (props: HeroSecProps) => {
   return (
     <div>
       <section className="relative h-screen bg-primaryColor ">
