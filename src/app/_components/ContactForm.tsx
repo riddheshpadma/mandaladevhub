@@ -4,12 +4,20 @@ import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 
+interface FormData {
+  name: string;
+  email: string;
+  number: string;
+  company: string;
+  message: string;
+}
+
 const ContactForm = () => {
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit, reset } = useForm<FormData>();
   const [showPopup, setShowPopup] = useState(false);
   const [popupMessage, setPopupMessage] = useState("");
 
-  const onSubmit = async (data) => {
+  const onSubmit = async (data: FormData) => {
     try {
       const response = await axios.post("/api/contactus", data, {
         headers: { "Content-Type": "application/json" },
@@ -17,7 +25,7 @@ const ContactForm = () => {
 
       if (response.status === 201) {
         setPopupMessage(
-          "Thank you for connecting us! we will get back to you soon"
+          "Thank you for connecting with us! We will get back to you soon."
         );
       } else {
         setPopupMessage("Failed to send your message. Please try again.");
@@ -25,7 +33,7 @@ const ContactForm = () => {
       reset();
       setShowPopup(true);
     } catch (error) {
-      setPopupMessage("An error occurred. Please try again.", error);
+      setPopupMessage("An error occurred. Please try again.");
       setShowPopup(true);
     }
   };
@@ -82,7 +90,7 @@ const ContactForm = () => {
             <textarea
               {...register("message")}
               placeholder="Your Message"
-              rows="4"
+              rows={4}
               className="input-field"
               required
             />
