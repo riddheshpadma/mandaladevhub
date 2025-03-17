@@ -6,9 +6,9 @@
 /* styles/globals.css */
 @import url('https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&display=swap');
 
-body {
+/* body {
   font-family: 'MuseoModerno', sans-serif;
-}
+} */
 :root {
   --background: #ffffff;
   --foreground: #171717;
