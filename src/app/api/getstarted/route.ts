@@ -2,8 +2,17 @@ import connect from "@/lib/db";
 import GetStarted from "../../../lib/modals/getstarted";
 import { NextResponse } from "next/server";
 import mongoose from "mongoose";
+import { allowedOrigins } from "../ReqOrigin"; // Import allowed origins
 
+const checkOrigin = (request: Request) => {
+  const origin = request.headers.get("Origin") || request.headers.get("Referer");
+  if (!origin || !allowedOrigins.includes(origin)) {
+    return new NextResponse("Forbidden", { status: 403 });
+  }
+};
 export const POST = async (request: Request) => {
+  const originCheck = checkOrigin(request);
+  if (originCheck) return originCheck;
   try {
     await connect();
     const body = await request.json();
