@@ -31,7 +31,7 @@ const Page = () => {
         reset();
         setShowStatus(true);
         setTimeout(() => {
-          router.push("/home");
+          router.push("/");
         }, 2000);
       } else {
         setStatusMessage("Something went wrong. Please try again.");
