@@ -57,7 +57,7 @@ export default function page() {
                   <span>Free Domain & Hosting (1st Year)</span>
                 </li>
               </ul>
-              <Link href="/contact" className="mt-6 block w-full bg-[#5D213B] hover:bg-orange-600 text-white text-center py-2 rounded-lg transition duration-300">
+              <Link href="/getstarted" className="mt-6 block w-full bg-[#5D213B] hover:bg-orange-600 text-white text-center py-2 rounded-lg transition duration-300">
                 Get Started
               </Link>
             </div>
