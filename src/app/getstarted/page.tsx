@@ -4,6 +4,21 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Navbar from '../_components/Navbar';
 
+interface FormErrors {
+  name?: string;
+  email?: string;
+  phone?: string;
+  company?: string;
+  package?: string;
+  message?: string;
+  businessType?: string;
+  project?: string;
+  budget?: string;
+  timeline?: string;
+  referral?: string;
+  agreeTerms?: string;
+  submit?: string; // Add this line
+}
 
 import axios from 'axios';
 import { validateLeadForm } from '@/utils/formValidation';
@@ -26,7 +41,7 @@ export default function GetStarted() {
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState<FormErrors>({});
   
   
   const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
