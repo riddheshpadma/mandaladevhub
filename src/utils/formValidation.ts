@@ -37,48 +37,56 @@ export function validateLeadForm(formData: LeadFormData): FormErrors {
 
   // Name validation (required, min 2 chars)
   if (!formData.name.trim()) {
-      errors.name = 'Full name is required';
+    errors.name = 'Full name is required';
   } else if (formData.name.trim().length < 2) {
-      errors.name = 'Name must be at least 2 characters';
+    errors.name = 'Name must be at least 2 characters';
   }
 
   // Email validation (required, valid format)
   if (!formData.email.trim()) {
-      errors.email = 'Email is required';
+    errors.email = 'Email is required';
   } else if (!emailRegex.test(formData.email)) {
-      errors.email = 'Please enter a valid email address';
+    errors.email = 'Please enter a valid email address';
   }
 
   // Phone validation (required, valid format)
   if (!formData.phone.trim()) {
-      errors.phone = 'Phone number is required';
+    errors.phone = 'Phone number is required';
   } else if (!phoneRegex.test(formData.phone)) {
-      errors.phone = 'Please enter a valid phone number';
+    errors.phone = 'Please enter a valid phone number';
   }
 
   // Package validation (required)
   if (!formData.package.trim()) {
-      errors.package = 'Please select a package';
+    errors.package = 'Please select a package';
   }
 
   // Business Type validation (required)
   if (!formData.businessType.trim()) {
-      errors.businessType = 'Please specify your business type';
+    errors.businessType = 'Please specify your business type';
   }
 
   // Project validation (required)
   if (!formData.project.trim()) {
-      errors.project = 'Please describe your project';
+    errors.project = 'Please describe your project';
   }
 
   // Message validation (optional but validate length if provided)
   if (formData.message && formData.message.trim().length < 10) {
-      errors.message = 'Message should be at least 10 characters';
+    errors.message = 'Message should be at least 10 characters';
   }
 
+  // In your validateLeadForm function
+  if (!formData.businessType.trim()) {
+    errors.businessType = 'Please specify your business type';
+  }
+
+  if (!formData.project.trim()) {
+    errors.project = 'Please describe your project';
+  }
   // Terms agreement validation (required)
   if (!formData.agreeTerms) {
-      errors.agreeTerms = 'You must agree to the terms and conditions';
+    errors.agreeTerms = 'You must agree to the terms and conditions';
   }
 
   return errors;

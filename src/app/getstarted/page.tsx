@@ -15,6 +15,7 @@ export default function GetStarted() {
     company: '',
     package: 'MVP Development',
     message: '',// Add this new required field
+    businessType: '', // Added this required field
     project: '', // Add this new required field
     budget: '', // Make sure values match enum in schema
     timeline: '',
@@ -86,7 +87,7 @@ export default function GetStarted() {
         company: '',
         package: 'MVP Development',
         message: '',
-
+        businessType: '', // Added this required field
         budget: '',
         timeline: '',
         project: '',
@@ -345,7 +346,21 @@ export default function GetStarted() {
                     </select>
                   </div>
                 </div>
-
+                <div>
+                  <label htmlFor="businessType" className="block text-sm font-medium text-gray-700 mb-1">
+                    Business Type *
+                  </label>
+                  <input
+                    type="text"
+                    id="businessType"
+                    name="businessType"
+                    value={formData.businessType}
+                    onChange={handleChange}
+                    className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#5D213B] focus:border-[#5D213B] outline-none transition ${errors.businessType ? 'border-red-500' : 'border-gray-300'}`}
+                    placeholder="Your business type"
+                  />
+                  {errors.businessType && <p className="mt-1 text-sm text-red-600">{errors.businessType}</p>}
+                </div>
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Project Details</label>
                   <textarea
