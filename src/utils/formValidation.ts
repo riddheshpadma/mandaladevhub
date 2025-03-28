@@ -1,5 +1,5 @@
 // utils/formValidation.ts
-export function validateLeadForm(formData: any): Record<string, string> {
+export function validateLeadForm(formData: unknown): Record<string, string> {
     const errors: Record<string, string> = {};
   
     // Required fields validation
