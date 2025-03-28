@@ -1,10 +1,8 @@
 "use client"
 import { useState } from 'react';
-import Head from 'next/head';
 import Link from 'next/link';
 import Navbar from '../_components/Navbar';
 
-import { useRouter } from 'next/navigation';
 import axios from 'axios';
 import { validateLeadForm } from '@/utils/formValidation';
 
@@ -26,7 +24,6 @@ export default function GetStarted() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [errors, setErrors] = useState({});
-  const router = useRouter();
   
   const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value, type } = event.target as HTMLInputElement;
@@ -39,7 +36,6 @@ export default function GetStarted() {
   };
   
   const [statusMessage, setStatusMessage] = useState('');
-  const [showStatus, setShowStatus] = useState(false);
   
   
   
@@ -65,7 +61,6 @@ export default function GetStarted() {
       // Success - Axios wraps the response data in a data property
       setStatusMessage(response.data.message || 'Thank you for your submission!');
       setSubmitSuccess(true);
-      setShowStatus(true);
       
       // Reset form
       setFormData({
@@ -138,7 +133,7 @@ export default function GetStarted() {
             </div>
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Thank You!</h2>
             <p className="text-xl text-gray-600 mb-6">{statusMessage}</p>
-            <p className="text-gray-500 mb-8">We've sent a confirmation to your email address.</p>
+            <p className="text-gray-500 mb-8">We&apos;ve sent a confirmation to your email address.</p>
             <Link href="/" className="bg-[#5D213B] hover:bg-orange-600 text-white font-bold px-8 py-3 rounded-lg transition duration-300 inline-block">
               Back to Home
             </Link>
