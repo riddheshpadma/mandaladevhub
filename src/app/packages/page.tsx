@@ -125,7 +125,7 @@ export default function page() {
                   <span>Free 1-Hour Consultation</span>
                 </li>
               </ul>
-              <Link href="/contact" className="relative bottom-0 mt-6 block w-full bg-[#5D213B] hover:bg-orange-700 text-white text-center py-2 rounded-lg transition duration-300">
+              <Link href="/getstarted" className="relative bottom-0 mt-6 block w-full bg-[#5D213B] hover:bg-orange-700 text-white text-center py-2 rounded-lg transition duration-300">
                 Transform Now
               </Link>
             </div>
