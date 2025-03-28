@@ -360,7 +360,7 @@ export default function GetStarted() {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    rows="4"
+                    rows={4}
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#5D213B] focus:border-[#5D213B] outline-none transition"
                     placeholder="Tell us about your project requirements, goals, and any specific features you need..."
                   ></textarea>
