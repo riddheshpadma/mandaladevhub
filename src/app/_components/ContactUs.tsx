@@ -65,20 +65,24 @@ const ContactUs = () => {
                   <div className="flex justify-center items-center p-10 mt-5">
                     <ul className="flex justify-around w-full">
                       <li>
+                        <a href="https://www.linkedin.com/company/106391569">
                         <div className="group relative inline-block">
                           <button className="focus:outline-none">
                             <LuLinkedin size={36} className="btnSocial" />
                           </button>
                           <span className="btnSpan">LinkedIn</span>
                         </div>
+                        </a>
                       </li>
                       <li>
+                        <a href="https://x.com/mandaladevhub">
                         <div className="group relative inline-block">
                           <button className="focus:outline-none">
                             <RiTwitterXFill size={36} className="btnSocial" />
                           </button>
                           <span className="btnSpan">X</span>
                         </div>
+                        </a>
                       </li>
                       {/* <li>
                         <div class="group relative inline-block">
@@ -91,12 +95,14 @@ const ContactUs = () => {
                         </div>
                       </li> */}
                       <li>
+                        <a href="https://www.instagram.com/mandaladevhub/">
                         <div className="group relative inline-block">
                           <button className="focus:outline-none">
                             <BsInstagram size={36} className="btnSocial" />
                           </button>
                           <span className="btnSpan">Instagram</span>
                         </div>
+                        </a>
                       </li>
                       {/* <li>
                         <div class="group relative inline-block">
@@ -115,10 +121,10 @@ const ContactUs = () => {
                       <li>
                         {/* <span className="font-semibold mr-2">Email:</span> */}
                         <a
-                          href="mailto:hello@example.com"
+                          href="mandaladevhub@gmail.com"
                           className="text-primary hover:underline"
                         >
-                          info@mandaladevhub.com
+                          mandaladevhub@gmail.com
                         </a>
                       </li>
                       <li>
@@ -127,7 +133,7 @@ const ContactUs = () => {
                           href="tel:+123456789"
                           className="text-primary hover:underline"
                         >
-                          +91 922640 6267
+                          +91 92264 06267
                         </a>
                       </li>
                       <li className="flex justify-center">
