@@ -1,5 +1,4 @@
 // pages/gudi-padwa-offer.jsx
-import Head from 'next/head';
 import Link from 'next/link';
 import Navbar from '../_components/Navbar';
 
