@@ -14,51 +14,51 @@ export default function GetStarted() {
     phone: '', // This should match the 'number' field in your schema
     company: '',
     package: 'MVP Development',
-    // Add this new required field
+    message: '',// Add this new required field
     project: '', // Add this new required field
     budget: '', // Make sure values match enum in schema
     timeline: '',
     referral: '',
     agreeTerms: false,
   });
-  
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   // Replace your current errors state declaration with:
-const [errors, setErrors] = useState<{
-  name?: string;
-  email?: string;
-  phone?: string;
-  company?: string;
-  package?: string;
-  message?: string;
-  businessType?: string;
-  project?: string;
-  budget?: string;
-  timeline?: string;
-  referral?: string;
-  agreeTerms?: string;
-  submit?: string;
-}>({});
-  
+  const [errors, setErrors] = useState<{
+    name?: string;
+    email?: string;
+    phone?: string;
+    company?: string;
+    package?: string;
+    message?: string;
+    businessType?: string;
+    project?: string;
+    budget?: string;
+    timeline?: string;
+    referral?: string;
+    agreeTerms?: string;
+    submit?: string;
+  }>({});
+
   const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value, type } = event.target as HTMLInputElement;
     const checked = type === 'checkbox' ? (event.target as HTMLInputElement).checked : undefined;
-    
+
     setFormData((prevState) => ({
       ...prevState,
       [name]: type === 'checkbox' ? checked : value
     }));
   };
-  
+
   const [statusMessage, setStatusMessage] = useState('');
-  
-  
-  
+
+
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Validate form
     const validationErrors = validateLeadForm(formData);
     if (Object.keys(validationErrors).length > 0) {
@@ -66,18 +66,18 @@ const [errors, setErrors] = useState<{
       setIsSubmitting(false);
       return;
     }
-  
+
     try {
       const response = await axios.post('/api/leads', formData, {
         headers: {
           'Content-Type': 'application/json',
         },
       });
-  
+
       // Success - Axios wraps the response data in a data property
       setStatusMessage(response.data.message || 'Thank you for your submission!');
       setSubmitSuccess(true);
-      
+
       // Reset form
       setFormData({
         name: '',
@@ -85,14 +85,17 @@ const [errors, setErrors] = useState<{
         phone: '',
         company: '',
         package: 'MVP Development',
-        project: '',
+        message: '',
+        
         budget: '',
         timeline: '',
+        project: '',
+        
         referral: '',
         agreeTerms: false,
       });
       setErrors({});
-  
+
     } catch (error) {
       if (axios.isAxiosError(error)) {
         // Handle Axios-specific error
@@ -102,7 +105,7 @@ const [errors, setErrors] = useState<{
           console.error('Error response:', error.response.data);
           console.error('Error status:', error.response.status);
           console.error('Error headers:', error.response.headers);
-          
+
           if (error.response.data.errors) {
             // Set validation errors from server
             setErrors(error.response.data.errors);
@@ -161,10 +164,10 @@ const [errors, setErrors] = useState<{
 
   return (
     <div className="min-h-screen bg-gray-50">
-      
-      
+
+
       <Navbar />
-      
+
       <section className="py-12 px-4 max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Claim Your Gudi Padwa Offer</h1>
@@ -172,7 +175,7 @@ const [errors, setErrors] = useState<{
             Complete this form to secure your festive discount. Our team will contact you to discuss your project details.
           </p>
         </div>
-        
+
         <div className="bg-white rounded-xl shadow-lg overflow-hidden">
           <div className="md:flex">
             <div className="md:w-1/3 bg-gradient-to-b from-[#5D213B] to-[#c5487e] p-8 text-white">
@@ -203,14 +206,14 @@ const [errors, setErrors] = useState<{
                   <span>Offer valid until April 10, 2023</span>
                 </li>
               </ul>
-              
+
               <div className="mt-8 bg-white bg-opacity-20 p-4 rounded-lg">
                 <h3 className="font-bold mb-2">Need help?</h3>
                 <p className="text-sm mb-2">Email us at: <a href="mailto:offers@example.com" className="underline">offers@example.com</a></p>
                 <p className="text-sm">Call us at: <a href="tel:+911234567890" className="underline">+91 12345 67890</a></p>
               </div>
             </div>
-            
+
             <div className="md:w-2/3 p-8">
               <form onSubmit={handleSubmit} className="space-y-6">
                 {errors.submit && (
@@ -228,7 +231,7 @@ const [errors, setErrors] = useState<{
                   </div>
                 )}
 
-                
+
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
@@ -243,7 +246,7 @@ const [errors, setErrors] = useState<{
                     />
                     {errors.name && <p className="mt-1 text-sm text-red-600">{errors.name}</p>}
                   </div>
-                  
+
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
                     <input
@@ -258,7 +261,7 @@ const [errors, setErrors] = useState<{
                     {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email}</p>}
                   </div>
                 </div>
-                
+
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
@@ -273,7 +276,7 @@ const [errors, setErrors] = useState<{
                     />
                     {errors.phone && <p className="mt-1 text-sm text-red-600">{errors.phone}</p>}
                   </div>
-                  
+
                   <div>
                     <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">Company/Organization</label>
                     <input
@@ -287,7 +290,7 @@ const [errors, setErrors] = useState<{
                     />
                   </div>
                 </div>
-                
+
                 <div>
                   <label htmlFor="package" className="block text-sm font-medium text-gray-700 mb-1">Interested Package *</label>
                   <select
@@ -304,7 +307,7 @@ const [errors, setErrors] = useState<{
                   </select>
                   {errors.package && <p className="mt-1 text-sm text-red-600">{errors.package}</p>}
                 </div>
-                
+
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="budget" className="block text-sm font-medium text-gray-700 mb-1">Estimated Budget (INR)</label>
@@ -323,7 +326,7 @@ const [errors, setErrors] = useState<{
                       <option value="5L+">Above ₹5,00,000</option>
                     </select>
                   </div>
-                  
+
                   <div>
                     <label htmlFor="timeline" className="block text-sm font-medium text-gray-700 mb-1">Project Timeline</label>
                     <select
@@ -342,7 +345,7 @@ const [errors, setErrors] = useState<{
                     </select>
                   </div>
                 </div>
-                
+
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Project Details</label>
                   <textarea
@@ -355,7 +358,7 @@ const [errors, setErrors] = useState<{
                     placeholder="Tell us about your project requirements, goals, and any specific features you need..."
                   ></textarea>
                 </div>
-                
+
                 <div>
                   <label htmlFor="referral" className="block text-sm font-medium text-gray-700 mb-1">How did you hear about us?</label>
                   <select
@@ -373,7 +376,7 @@ const [errors, setErrors] = useState<{
                     <option value="Other">Other</option>
                   </select>
                 </div>
-                
+
                 <div className="flex items-start">
                   <div className="flex items-center h-5">
                     <input
@@ -392,7 +395,7 @@ const [errors, setErrors] = useState<{
                     {errors.agreeTerms && <p className="mt-1 text-sm text-red-600">{errors.agreeTerms}</p>}
                   </div>
                 </div>
-                
+
                 <div className="pt-2">
                   <button
                     type="submit"
