@@ -7,6 +7,8 @@ import axios from 'axios';
 import { validateLeadForm } from '@/utils/formValidation';
 
 
+
+
 export default function GetStarted() {
   const [formData, setFormData] = useState({
     name: '',
@@ -53,7 +55,9 @@ export default function GetStarted() {
 
   const [statusMessage, setStatusMessage] = useState('');
 
-
+  const baseURL = process.env.NODE_ENV === 'development' 
+  ? 'http://localhost:3000' 
+  : 'https://mandaladevhub.vercel.app/getstarted';
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -68,7 +72,7 @@ export default function GetStarted() {
     }
 
     try {
-      const response = await axios.post('/api/leads', formData, {
+      const response = await axios.post(`${baseURL}/api/leads`, formData, {
         headers: {
           'Content-Type': 'application/json',
         },
