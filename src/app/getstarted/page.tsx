@@ -145,10 +145,7 @@ export default function GetStarted() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Head>
-        <title>Get Started - Gudi Padwa Tech Launchpad</title>
-        <meta name="description" content="Claim your Gudi Padwa tech offer and launch your dream project" />
-      </Head>
+      
       
       <Navbar />
       
