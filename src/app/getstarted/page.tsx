@@ -6,6 +6,7 @@ import Navbar from '../_components/Navbar';
 import axios from 'axios';
 import { validateLeadForm } from '@/utils/formValidation';
 
+
 export default function GetStarted() {
   const [formData, setFormData] = useState({
     name: '',
@@ -23,7 +24,22 @@ export default function GetStarted() {
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
-  const [errors, setErrors] = useState({});
+  // Replace your current errors state declaration with:
+const [errors, setErrors] = useState<{
+  name?: string;
+  email?: string;
+  phone?: string;
+  company?: string;
+  package?: string;
+  message?: string;
+  businessType?: string;
+  project?: string;
+  budget?: string;
+  timeline?: string;
+  referral?: string;
+  agreeTerms?: string;
+  submit?: string;
+}>({});
   
   const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value, type } = event.target as HTMLInputElement;
