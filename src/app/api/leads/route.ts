@@ -56,7 +56,6 @@ export async function POST(request: Request) {
       company: formData.company,
       package: formData.package,
       message: formData.message,
-      businessType: formData.businessType,
       project: formData.project,
       budget: formData.budget,
       timeline: formData.timeline,

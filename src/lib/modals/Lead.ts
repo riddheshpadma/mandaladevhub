@@ -8,7 +8,7 @@ export interface ILead extends Document {
   company?: string;
   package: string;
   message?: string;
-  businessType: string;  // Changed from optional to required
+    // Changed from optional to required
   project: string;       // Changed from optional to required
   budget?: string;
   timeline?: string;
@@ -26,7 +26,6 @@ const LeadSchema: Schema = new Schema({
   company: { type: String },
   package: { type: String, required: true, default: 'MVP Development' },
   message: { type: String },
-  businessType: { type: String },
   project: { type: String },
   budget: { type: String },
   timeline: { type: String },
