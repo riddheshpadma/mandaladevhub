@@ -9,7 +9,7 @@ const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
 
   return (
-    <nav className="absolute top-0 left-0 w-full flex justify-between items-center px-6 md:px-20 text-[#5D2340] z-50 bg-[#FDF2F8]">
+    <nav className="sticky top-0 left-0 w-full flex justify-between items-center px-6 md:px-20 text-[#5D2340] z-50 bg-[#FDF2F8]">
       {/* Logo */}
       <div className="flex items-center">
         <Image
