@@ -13,7 +13,7 @@ const Navbar = () => {
       {/* Logo */}
       <div className="flex items-center">
         <Image
-          src="/assets/BrandGudiPadwa.png"
+          src="/assets/BrandLogoMD.png"
           alt="logo"
           width={100}
           height={100}
