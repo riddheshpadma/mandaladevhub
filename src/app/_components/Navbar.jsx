@@ -82,9 +82,10 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="mobile-navigation-item">
-          <Link href="/packages" onClick={() => setNavbar(false)}>Packages</Link>
-        </li>
-        
+              <Link href="/packages" onClick={() => setNavbar(false)}>
+                Packages
+              </Link>
+            </li>
             <li className="mobile-navigation-item">
               <Link href="/blogs" onClick={() => setNavbar(false)}>
                 Blogs
