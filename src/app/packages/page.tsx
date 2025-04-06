@@ -10,7 +10,7 @@ export default function page() {
       </div>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[#5D213B] to-[#c5487e] text-white py-20 px-4 text-center mt-20">
+      <section className="bg-gradient-to-r from-[#5D213B] to-[#c5487e] text-white py-20 px-4 text-center mt-40">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="block mb-2">Gudi Padwa Tech Launchpad</span>
