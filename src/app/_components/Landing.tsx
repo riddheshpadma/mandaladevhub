@@ -4,17 +4,14 @@ import Image from "next/image";
 import Navbar from "./Navbar";
 import ContactUs from "./ContactUs";
 import Link from "next/link";
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 const Landing = () => {
   const [showDialog, setShowDialog] = useState(false);
-  
-  useEffect(() => {
-    
 
+  useEffect(() => {
     const timer = setTimeout(() => {
       setShowDialog(true);
-      
     }, 3000);
 
     return () => clearTimeout(timer);
@@ -22,49 +19,50 @@ const Landing = () => {
 
   const handleClose = () => {
     setShowDialog(false);
-   
   };
   return (
     <div>
-      <div>
-            <Navbar />
-          </div>
-      <div className="min-h-screen bg-pink-50 flex items-end justify-center">
-      
+      <div className="min-h-screen bg-pink-50 flex flex-col items-end justify-center">
         {/* Dialog Box - with higher z-index and animation */}
-      {showDialog && (
-        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-[1000] p-4 animate-fadeIn">
-          <div className="bg-gradient-to-br from-[#5D213B] to-[#c5487e] text-white rounded-xl max-w-md w-full overflow-hidden shadow-2xl animate-scaleIn">
-            <div className="p-6 text-center">
-              <h3 className="text-2xl font-bold mb-3">🎉 Gudi Padwa Special Offer! 🎉</h3>
-              <p className="mb-4">Celebrate the New Year with exclusive discounts on our tech packages!</p>
-              <div className="bg-white text-[#5D213B] p-3 rounded-lg mb-4">
-                <p className="font-bold">Limited Time Offer:</p>
-                <p>Up to 25% OFF on all packages</p>
-                <p className="text-sm mt-1">Valid until April 10</p>
-              </div>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <button 
-                  onClick={handleClose}
-                  className="bg-white text-[#5D213B] font-bold px-6 py-2 rounded-lg hover:bg-gray-100 transition"
-                >
-                  Continue Browsing
-                </button>
-                <Link 
-                  href="/packages" 
-                  onClick={handleClose}
-                  className="bg-yellow-400 text-gray-900 font-bold px-6 py-2 rounded-lg hover:bg-yellow-500 transition text-center"
-                >
-                  View Offers
-                </Link>
+        {showDialog && (
+          <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-[1000] p-4 animate-fadeIn">
+            <div className="bg-gradient-to-br from-[#5D213B] to-[#c5487e] text-white rounded-xl max-w-md w-full overflow-hidden shadow-2xl animate-scaleIn">
+              <div className="p-6 text-center">
+                <h3 className="text-2xl font-bold mb-3">
+                  🎉 Gudi Padwa Special Offer! 🎉
+                </h3>
+                <p className="mb-4">
+                  Celebrate the New Year with exclusive discounts on our tech
+                  packages!
+                </p>
+                <div className="bg-white text-[#5D213B] p-3 rounded-lg mb-4">
+                  <p className="font-bold">Limited Time Offer:</p>
+                  <p>Up to 25% OFF on all packages</p>
+                  <p className="text-sm mt-1">Valid until April 10</p>
+                </div>
+                <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                  <button
+                    onClick={handleClose}
+                    className="bg-white text-[#5D213B] font-bold px-6 py-2 rounded-lg hover:bg-gray-100 transition"
+                  >
+                    Continue Browsing
+                  </button>
+                  <Link
+                    href="/packages"
+                    onClick={handleClose}
+                    className="bg-yellow-400 text-gray-900 font-bold px-6 py-2 rounded-lg hover:bg-yellow-500 transition text-center"
+                  >
+                    View Offers
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
+        <div>
+            <Navbar />
+          </div>
         <div className="bg-white rounded-t-2xl shadow-lg p-8 w-[95%] h-[85vh]">
-          
-
           <div className="flex flex-col md:flex-row mt-8 items-center">
             <div className="md:w-1/2 text-center md:text-left">
               <h1 className="text-4xl font-bold text-[#5C213C] mb-4">
