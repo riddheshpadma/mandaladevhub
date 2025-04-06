@@ -27,6 +27,9 @@ const Landing = () => {
   return (
     <div>
       <div className="min-h-screen bg-pink-50 flex items-end justify-center">
+      <div>
+            <Navbar />
+          </div>
         {/* Dialog Box - with higher z-index and animation */}
       {showDialog && (
         <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-[1000] p-4 animate-fadeIn">
@@ -59,9 +62,7 @@ const Landing = () => {
         </div>
       )}
         <div className="bg-white rounded-t-2xl shadow-lg p-8 w-[95%] h-[85vh]">
-          <div>
-            <Navbar />
-          </div>
+          
 
           <div className="flex flex-col md:flex-row mt-8 items-center">
             <div className="md:w-1/2 text-center md:text-left">
