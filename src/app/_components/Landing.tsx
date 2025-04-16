@@ -4,22 +4,10 @@ import Image from "next/image";
 import Navbar from "./Navbar";
 import ContactUs from "./ContactUs";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+
 
 const Landing = () => {
-  const [showDialog, setShowDialog] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowDialog(true);
-    }, 3000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  const handleClose = () => {
-    setShowDialog(false);
-  };
+  
   return (
     <div>
       <div className="min-h-screen bg-pink-50 flex flex-col items-center justify-center">
