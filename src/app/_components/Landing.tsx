@@ -157,7 +157,7 @@ const Landing = () => {
               </div>
 
               <p className="font-bold text-lg text-[#5C213C]">
-                Let's shape the future together.
+                Let&aposs shape the future together.
               </p>
               <p className="font-semibold text-[#5C213C]">
                 Mandala DevHub Services – Transforming ideas into impactful solutions.
