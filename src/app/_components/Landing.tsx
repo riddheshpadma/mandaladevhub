@@ -4,363 +4,216 @@ import Image from "next/image";
 import Navbar from "./Navbar";
 import ContactUs from "./ContactUs";
 import Link from "next/link";
-
+import { Rocket, Code, Cpu, Palette, Smartphone, ShoppingCart, Server, BarChart2, ChevronRight, Check } from 'lucide-react';
 
 const Landing = () => {
-  
+  const services = [
+    { icon: <Code className="w-8 h-8" />, title: "Web Development", description: "Custom websites with modern frameworks" },
+    { icon: <Smartphone className="w-8 h-8" />, title: "Mobile Apps", description: "iOS & Android applications" },
+    { icon: <Palette className="w-8 h-8" />, title: "UI/UX Design", description: "Intuitive user experiences" },
+    { icon: <ShoppingCart className="w-8 h-8" />, title: "E-commerce", description: "Online stores that convert" },
+    { icon: <Server className="w-8 h-8" />, title: "Custom Software", description: "Tailored business solutions" },
+    { icon: <BarChart2 className="w-8 h-8" />, title: "Digital Marketing", description: "Growth-focused strategies" }
+  ];
+
+  const technologies = [
+    { name: "HTML5", icon: "/assets/tech/html.png" },
+    { name: "CSS", icon: "/assets/tech/css.png" },
+    { name: "JavaScript", icon: "/assets/tech/js.png" },
+    { name: "React", icon: "/assets/tech/react.png" },
+    { name: "Node.js", icon: "/assets/tech/nodejs.png" },
+    { name: "Express", icon: "/assets/tech/express.png" },
+    { name: "Java", icon: "/assets/tech/java.png" },
+    { name: "Python", icon: "/assets/tech/python.png" },
+    { name: "MongoDB", icon: "/assets/tech/mongodb.png" },
+    { name: "MySQL", icon: "/assets/tech/mysql.png" },
+    { name: "Git", icon: "/assets/tech/git.png" },
+    { name: "Tailwind", icon: "/assets/tech/tailwind.png" }
+  ];
+
   return (
-    <div>
-      <div className="min-h-screen bg-pink-50 flex flex-col items-center justify-center">
-        <div>
-          <Navbar />
-        </div>
-        <div className="bg-white rounded-t-2xl shadow-lg p-8 w-[95%] h-[85vh]">
-          <div className="flex flex-col md:flex-row mt-8 items-center">
-            <div className="md:w-1/2 text-center md:text-left">
-              <h1 className="text-4xl font-bold text-[#5C213C] mb-4">
-                We are leading <br />
-                <span className="text-[#5C213C]">
-                  Web Development & Design Company
-                </span>
-              </h1>
-              <p className="text-gray-600 mb-6">
-                At Mandala DevHub, we specialize in delivering high-performance,
-                secure, and scalable software solutions that empower businesses
-                to thrive in the digital era.
-              </p>
-              <Link href="/services">
-                <button className="bg-[#5C213C] text-white px-6 py-2 rounded-full">
-                  Learn More →
-                </button>
-              </Link>
-            </div>
-            <div className="md:w-1/2 mt-8 md:mt-0 flex justify-center">
-              <Image
-                src="/assets/hero-illustration.png"
-                alt="Illustration"
-                width={400}
-                height={300}
-                className="w-80 h-auto"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="relative h-screen w-full bg-[#181813]">
-        <section
-          id="services"
-          className="text-black px-10 py-24 lg:py-40 bg-white"
-        >
-          <div className="secContainer">
-            <div className="subHeadSec">
-              <span>Services</span>
-            </div>
-            <div className="flex-1">
-              <div className="lg:mb-14">
-                <h1 className="heading">Innovate. Design. Deliver.</h1>
-              </div>
-              <div className="flex lg:flex-row flex-col items-center justify-between">
-                <div className="flex-1">
-                  <p>
-                    Empowering businesses with cutting-edge digital solutions,
-                    we specialize in web and mobile app development, intuitive
-                    UI/UX design, e-commerce platforms, and custom software
-                    tailored to meet unique needs. Our expertise extends to
-                    digital marketing and reliable maintenance, ensuring your
-                    online presence is impactful, secure, and always evolving
-                    with your goals.
-                  </p>
-                </div>
-                <div className="flex flex-1 max-w-md  items-center justify-start p-10 text-white">
+    <div className="bg-pink-50">
+      {/* Hero Section */}
+      <div className="min-h-screen flex flex-col">
+        <Navbar />
+        <div className="flex-grow flex items-center px-4 md:px-8">
+          <div className="container mx-auto bg-white rounded-2xl shadow-lg p-6 md:p-12">
+            <div className="flex flex-col md:flex-row items-center gap-8">
+              <div className="md:w-1/2 space-y-6">
+                <h1 className="text-4xl md:text-5xl font-bold text-[#5C213C]">
+                  Software Development & <br className="hidden md:block" />
+                  <span className="text-[#c5487e]">AI Powered Solutions</span>
+                </h1>
+                <p className="text-gray-600 text-lg">
+                  At Mandala DevHub, we specialize in delivering high-performance,
+                  secure, and scalable software solutions that empower businesses
+                  to thrive in the digital era.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
                   <Link href="/services">
-                    <button className="md:ml-10 py-3 px-10 bg-[#2a2a2a] hover:bg-black ease-in-out duration-1000 text-base md:text-xl">
-                      Know More
+                    <button className="bg-[#5C213C] hover:bg-[#7a2b52] text-white px-8 py-3 rounded-full flex items-center gap-2 transition-all">
+                      Explore Services <ChevronRight className="w-5 h-5" />
+                    </button>
+                  </Link>
+                  <Link href="/contact">
+                    <button className="border-2 border-[#5C213C] text-[#5C213C] hover:bg-[#5C213C] hover:text-white px-8 py-3 rounded-full transition-all">
+                      Contact Us
                     </button>
                   </Link>
                 </div>
               </div>
-              <div className="relative max-w-4xl mt-16 rounded-3xl overflow-hidden shadow-2xl shadow-gray-500 aspect-[16/9] md:aspect-auto h-[50vh] md:h-[75vh] lg:h-[85vh] w-full">
+              <div className="md:w-1/2 flex justify-center">
                 <Image
-                  src="/assets/servicesechome.jpg"
-                  alt="Services"
-                  layout="fill"
-                  objectFit="cover"
-                  className="w-full h-full"
+                  src="/assets/hero-illustration.png"
+                  alt="Illustration"
+                  width={600}
+                  height={500}
+                  className="w-full max-w-md"
+                  priority
                 />
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </div>
 
-        {/* About Us Section Starts */}
-        <section
-          id="aboutus"
-          className="text-black px-10 py-24 lg:py-40 bg-white"
-        >
-          <div className="secContainer">
-            <div className="subHeadSec">
-              <span>About Us</span>
-            </div>
-            <div className="flex-1">
-              <div className="max-w-3xl mb-4">
-                <h1 className="heading">Aproach and Philosophy</h1>
+      {/* Services Section */}
+      <section id="services" className="py-20 bg-white px-4 md:px-8">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <span className="text-[#5C213C] font-semibold">OUR SERVICES</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#5C213C] mt-2 mb-4">
+              Innovate. Design. Deliver.
+            </h2>
+            <p className="max-w-3xl mx-auto text-gray-600">
+              Empowering businesses with cutting-edge digital solutions tailored to meet unique needs.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {services.map((service, index) => (
+              <div 
+                key={index}
+                className="bg-pink-50 rounded-xl p-6 hover:shadow-lg transition-all hover:-translate-y-2 border border-pink-100"
+              >
+                <div className="bg-[#5C213C] w-14 h-14 rounded-full flex items-center justify-center text-white mb-4">
+                  {service.icon}
+                </div>
+                <h3 className="text-xl font-bold text-[#5C213C] mb-2">{service.title}</h3>
+                <p className="text-gray-600">{service.description}</p>
               </div>
-              <div className="relative max-w-4xl mt-16 rounded-3xl overflow-hidden shadow-2xl shadow-gray-500 aspect-[16/9] md:aspect-auto h-[50vh] md:h-[75vh] lg:h-[85vh] w-full">
+            ))}
+          </div>
+
+          <div className="relative rounded-3xl overflow-hidden shadow-xl aspect-video w-full max-w-6xl mx-auto">
+            <Image
+              src="/assets/servicesechome.jpg"
+              alt="Services showcase"
+              fill
+              className="object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* About Us Section */}
+      <section id="about" className="py-20 bg-pink-50 px-4 md:px-8">
+        <div className="container mx-auto">
+          <div className="flex flex-col lg:flex-row gap-12 items-center">
+            <div className="lg:w-1/2">
+              <div className="relative rounded-3xl overflow-hidden shadow-xl aspect-video w-full">
                 <Image
                   src="/assets/about.webp"
-                  alt="Services"
-                  layout="fill"
-                  objectFit="cover"
-                  className="w-full h-full"
+                  alt="About Mandala DevHub"
+                  fill
+                  className="object-cover"
                 />
               </div>
-
-              <div className="flex flex-col md:flex-col md:w-3/4">
-                <div className="p-5 md:p-0">
-                  <p className="md:pr-20 mb-4 text-sm">
-                    At <span className="font-bold">Chakra Code Services</span>{" "}
-                    we are passionate about turning ideas into reality through
-                    innovative technology solutions. Founded with the vision to
-                    empower businesses, we specialize in delivering high-quality
-                    software and application development services that cater to
-                    diverse needs, whether you’re a startup seeking to make your
-                    mark or an established organization aiming to enhance your
-                    digital presence.
-                  </p>
-                  {/* <button className='py-6 px-14 border-2 rounded-full hover:bg-white hover:text-black transition-all ease-in-out duration-300 hover:scale-[1.2]'>Download CV</button> */}
-                </div>
-                <div className="flex flex-col md:justify-start md:items-start p-5 md:p-0 min-w-64">
-                  <h3 className="text-3xl font-bold">Why choose us?</h3>
-                  <ul className="space-y-6 pl-4 mt-4">
-                    <li>
-                      <span className="font-bold">
-                        Client-Centric Approach:
-                      </span>{" "}
-                      Your vision is at the core of everything we do.
+            </div>
+            <div className="lg:w-1/2">
+              <span className="text-[#5C213C] font-semibold">ABOUT US</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#5C213C] mt-2 mb-6">
+                Approach and Philosophy
+              </h2>
+              <p className="text-gray-600 mb-6">
+                At <span className="font-bold text-[#5C213C]">Mandala DevHub</span> we are passionate about turning ideas into reality through innovative technology solutions.
+              </p>
+              
+              <div className="space-y-6 mb-8">
+                <h3 className="text-2xl font-bold text-[#5C213C]">Why choose us?</h3>
+                <ul className="space-y-4">
+                  {[
+                    "Client-Centric Approach: Your vision is at our core",
+                    "Expert Team: Skilled professionals across technologies",
+                    "End-to-End Solutions: From ideation to execution",
+                    "Innovation & Quality: Creative solutions with uncompromised quality"
+                  ].map((item, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <Check className="text-[#5C213C] w-5 h-5 mt-0.5 flex-shrink-0" />
+                      <span>{item}</span>
                     </li>
-                    <li>
-                      <span className="font-bold">Expert Team:</span> A
-                      dedicated team with expertise across various domains and
-                      technologies.
-                    </li>
-                    <li>
-                      <span className="font-bold">End-to-End Solutions:</span>{" "}
-                      From ideation to execution and beyond, we cover it all.
-                    </li>
-                    <li>
-                      <span className="font-bold">Innovation & Quality:</span>{" "}
-                      We thrive on creativity and deliver products with
-                      uncompromised quality.
-                    </li>
-                  </ul>
-                  <p className="mt-10 font-extrabold text-xl">
-                    Let’s shape the future together.
-                  </p>
-                  <p className="font-bold mt-4">
-                    Mandala DevHub Services – Transforming ideas into impactful
-                    solutions.
-                  </p>
-                </div>
+                  ))}
+                </ul>
               </div>
+
+              <p className="font-bold text-lg text-[#5C213C]">
+                Let's shape the future together.
+              </p>
+              <p className="font-semibold text-[#5C213C]">
+                Mandala DevHub Services – Transforming ideas into impactful solutions.
+              </p>
             </div>
           </div>
-        </section>
-        {/* About Us section ends */}
+        </div>
+      </section>
 
-        {/* Technologies Section starts */}
-        <section
-          id="technologies"
-          className="text-black px-10 py-24 lg:py-40 bg-white"
-        >
-          <div className="secContainer">
-            <div className="subHeadSec">
-              <p>Technologies</p>
-            </div>
-            <div className="flex 1">
-              <div>
-                <div>
-                  <h1 className="heading">Tech Stack</h1>
-                  <div className="py-16">
-                    <ul className="grid grid-cols-5 gap-4 gap-y-14">
-                      <div className="group relative inline-block">
-                        <li className="skillIcon">
-                          <Image
-                            src="/assets/tech/html.png"
-                            width={100}
-                            height={100}
-                            alt="html"
-                          />
-                        </li>
-                        <span className="skillSpan">HTML5</span>
-                      </div>
-                      <div className="group relative inline-block">
-                        <li className="skillIcon">
-                          <Image
-                            src="/assets/tech/bootstrap.png"
-                            width={100}
-                            height={100}
-                            alt="html"
-                          />{" "}
-                        </li>
-                        <span className="skillSpan">BOOTSTRAP</span>
-                      </div>
-                      <div className="group relative inline-block">
-                        <li className="skillIcon">
-                          <Image
-                            src="/assets/tech/tailwind.png"
-                            width={100}
-                            height={100}
-                            alt="html"
-                          />{" "}
-                        </li>
-                        <span className="skillSpan">TAILWIND</span>
-                      </div>
-                      <div className="group relative inline-block">
-                        <li className="skillIcon">
-                          <Image
-                            src="/assets/tech/css.png"
-                            width={100}
-                            height={100}
-                            alt="html"
-                          />{" "}
-                        </li>
-                        <span className="skillSpan">CSS</span>
-                      </div>
-                      <div className="group relative inline-block">
-                        <li className="skillIcon">
-                          <Image
-                            src="/assets/tech/js.png"
-                            width={100}
-                            height={100}
-                            alt="html"
-                          />{" "}
-                        </li>
-                        <span className="skillSpan">JAVASCRIPT</span>
-                      </div>
-                      <div className="group relative inline-block">
-                        <li className="skillIcon">
-                          <Image
-                            src="/assets/tech/react.png"
-                            width={100}
-                            height={100}
-                            alt="html"
-                          />{" "}
-                        </li>
-                        <span className="skillSpan">React.JS</span>
-                      </div>
-                      <div className="group relative inline-block">
-                        <li className="skillIcon">
-                          <Image
-                            src="/assets/tech/nodejs.png"
-                            width={100}
-                            height={100}
-                            alt="html"
-                          />{" "}
-                        </li>
-                        <span className="skillSpan">Node.JS</span>
-                      </div>
-
-                      <div className="group relative inline-block">
-                        <li className="skillIcon">
-                          <Image
-                            src="/assets/tech/express.png"
-                            width={100}
-                            height={100}
-                            alt="html"
-                          />{" "}
-                        </li>
-                        <span className="skillSpan">Express.JS</span>
-                      </div>
-                      <div className="group relative inline-block">
-                        <li className="skillIcon">
-                          <Image
-                            src="/assets/tech/java.png"
-                            width={100}
-                            height={100}
-                            alt="html"
-                          />{" "}
-                        </li>
-                        <span className="skillSpan">JAVA</span>
-                      </div>
-                      <div className="group relative inline-block">
-                        <li className="skillIcon">
-                          <Image
-                            src="/assets/tech/python.png"
-                            width={100}
-                            height={100}
-                            alt="html"
-                          />{" "}
-                        </li>
-                        <span className="skillSpan">PYTHON</span>
-                      </div>
-                      <div className="group relative inline-block">
-                        <li className="skillIcon">
-                          <Image
-                            src="/assets/tech/mongodb.png"
-                            width={100}
-                            height={100}
-                            alt="html"
-                          />{" "}
-                        </li>
-                        <span className="skillSpan">MONGODB</span>
-                      </div>
-                      <div className="group relative inline-block">
-                        <li className="skillIcon">
-                          <Image
-                            src="/assets/tech/mysql.png"
-                            width={100}
-                            height={100}
-                            alt="html"
-                          />{" "}
-                        </li>
-                        <span className="skillSpan">MySQL</span>
-                      </div>
-                      <div className="group relative inline-block">
-                        <li className="skillIcon">
-                          <Image
-                            src="/assets/tech/git.png"
-                            width={100}
-                            height={100}
-                            alt="html"
-                          />{" "}
-                        </li>
-                        <span className="skillSpan">GIT</span>
-                      </div>
-                      <div className="group relative inline-block">
-                        <li className="skillIcon">
-                          <Image
-                            src="/assets/tech/github.png"
-                            width={100}
-                            height={100}
-                            alt="html"
-                          />{" "}
-                        </li>
-                        <span className="skillSpan">GITHUB</span>
-                      </div>
-                    </ul>
-                  </div>
-                </div>
-                <div>
-                  <h1 className="text-3xl mb-4">What We Do Best?</h1>
-                  <p className="max-w-2xl">
-                    As a dedicated and skilled team, we excel in creating
-                    dynamic and responsive applications. Our expertise spans
-                    across various technologies and methodologies, enabling we
-                    to deliver high-quality solutions tailored to meet the
-                    unique needs of each project.
-                  </p>
-                </div>
-              </div>
-            </div>
+      {/* Technologies Section */}
+      <section id="technologies" className="py-20 bg-white px-4 md:px-8">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <span className="text-[#5C213C] font-semibold">OUR TECH STACK</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#5C213C] mt-2 mb-4">
+              Technologies We Work With
+            </h2>
+            <p className="max-w-3xl mx-auto text-gray-600">
+              We leverage cutting-edge technologies to build robust and scalable solutions.
+            </p>
           </div>
-        </section>
-        {/* Technologies section ends */}
 
-        {/* Contact Us section starts */}
-        <section className="">
-          <ContactUs />
-        </section>
-      </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 mb-16">
+            {technologies.map((tech, index) => (
+              <div 
+                key={index}
+                className="bg-pink-50 rounded-xl p-6 flex flex-col items-center hover:shadow-lg transition-all hover:-translate-y-2 border border-pink-100"
+              >
+                <div className="w-16 h-16 relative mb-4">
+                  <Image
+                    src={tech.icon}
+                    alt={tech.name}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <h3 className="font-medium text-[#5C213C]">{tech.name}</h3>
+              </div>
+            ))}
+          </div>
+
+          <div className="max-w-4xl mx-auto text-center">
+            <h3 className="text-2xl font-bold text-[#5C213C] mb-4">What We Do Best?</h3>
+            <p className="text-gray-600">
+              As a dedicated and skilled team, we excel in creating dynamic and responsive applications. 
+              Our expertise spans across various technologies and methodologies, enabling us to deliver 
+              high-quality solutions tailored to meet the unique needs of each project.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="bg-[#5C213C]">
+        <ContactUs />
+      </section>
     </div>
   );
 };
