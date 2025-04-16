@@ -4,7 +4,7 @@ import Image from "next/image";
 import Navbar from "./Navbar";
 import ContactUs from "./ContactUs";
 import Link from "next/link";
-import { Rocket, Code, Cpu, Palette, Smartphone, ShoppingCart, Server, BarChart2, ChevronRight, Check } from 'lucide-react';
+import {  Code,  Palette, Smartphone, ShoppingCart, Server, BarChart2, ChevronRight, Check } from 'lucide-react';
 
 const Landing = () => {
   const services = [
