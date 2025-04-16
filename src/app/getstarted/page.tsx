@@ -136,7 +136,7 @@ export default function GetStarted() {
             </div>
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Thank You!</h2>
             <p className="text-xl text-gray-600 mb-6">{statusMessage}</p>
-            <p className="text-gray-500 mb-8">We've received your information and will contact you shortly.</p>
+            <p className="text-gray-500 mb-8">We&apos;ve received your information and will contact you shortly.</p>
             <Link href="/" className="bg-[#5D213B] hover:bg-orange-600 text-white font-bold px-8 py-3 rounded-lg transition duration-300 inline-flex items-center gap-2">
               <ArrowRight className="w-5 h-5" />
               Back to Home
