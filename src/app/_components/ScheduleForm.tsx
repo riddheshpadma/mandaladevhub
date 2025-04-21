@@ -7,7 +7,6 @@ import {
   User,
   Mail,
   Phone,
-  MessageSquare,
   X,
 } from "lucide-react";
 

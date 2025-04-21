@@ -12,6 +12,7 @@ const checkOrigin = (request: Request) => {
 };
 export async function POST(request: NextRequest) {
   const originCheck = checkOrigin(request);
+  if (originCheck) return originCheck;
   try {
     await dbConnect();
 

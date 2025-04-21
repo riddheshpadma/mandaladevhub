@@ -10,7 +10,7 @@ const ScheduleMeetCTA = () => {
             Ready to Transform Your Ideas?
           </h2>
           <p className="max-w-2xl mx-auto text-pink-100 mb-8">
-            Schedule a meeting with our team and let's start building something
+            Schedule a meeting with our team and let&apos;s start building something
             amazing together.
           </p>
           <Link href='/schedule'>

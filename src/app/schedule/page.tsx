@@ -2,10 +2,8 @@
 
 import { useState } from "react";
 import {
-  Calendar,
   Clock,
   User,
-  Mail,
   Phone,
   MessageSquare,
   ChevronRight,
@@ -51,7 +49,7 @@ const ScheduleMeeting = () => {
                 <span className="text-pink-200">With Our Team</span>
               </h1>
               <p className="text-pink-100 text-lg">
-                Let's discuss how we can help bring your ideas to life. Choose a
+                Let&apos;s discuss how we can help bring your ideas to life. Choose a
                 meeting type that fits your needs.
               </p>
               <div className="flex items-center gap-2 text-pink-200">
@@ -167,7 +165,7 @@ const ScheduleMeeting = () => {
             Ready to Transform Your Ideas?
           </h2>
           <p className="max-w-2xl mx-auto text-pink-100 mb-8">
-            Schedule a meeting with our team and let's start building something
+            Schedule a meeting with our team and let&apos;s start building something
             amazing together.
           </p>
           <button
