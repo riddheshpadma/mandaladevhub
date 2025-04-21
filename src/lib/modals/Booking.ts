@@ -1,4 +1,4 @@
-import { Schema, Document, models, model } from 'mongoose';
+import { Schema,  models, model } from 'mongoose';
 
 const BookingSchema: Schema = new Schema({
   meetingType: {
