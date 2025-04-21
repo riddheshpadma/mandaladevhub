@@ -34,8 +34,7 @@ export async function POST(request: Request) {
       $or: [
         { email: formData.email },
         { phone: formData.phone }
-      ],
-      source: 'gudi-padwa-offer' // Only check duplicates from this campaign
+      ]
     });
 
     if (existingLead) {
@@ -63,7 +62,6 @@ export async function POST(request: Request) {
       timeline: formData.timeline,
       referral: formData.referral,
       agreeTerms: formData.agreeTerms,
-      source: 'gudi-padwa-offer',
       status: 'new'
     });
 

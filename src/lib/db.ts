@@ -35,3 +35,7 @@ const connect = async () => {
 };
 
 export default connect;
+
+export function collection(arg0: string) {
+    throw new Error('Function not implemented.');
+}

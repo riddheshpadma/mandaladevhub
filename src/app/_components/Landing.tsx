@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import ContactUs from "./ContactUs";
 import Link from "next/link";
 import {  Code,  Palette, Smartphone, ShoppingCart, Server, BarChart2, ChevronRight, Check } from 'lucide-react';
+import ScheduleMeetCTA from "./ScheduleMeetCTA";
 
 const Landing = () => {
   const services = [
@@ -50,9 +51,9 @@ const Landing = () => {
                   to thrive in the digital era.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Link href="/services">
+                  <Link href="/schedule">
                     <button className="bg-[#5C213C] hover:bg-[#7a2b52] text-white px-8 py-3 rounded-full flex items-center gap-2 transition-all">
-                      Explore Services <ChevronRight className="w-5 h-5" />
+                      Schedule Meet <ChevronRight className="w-5 h-5" />
                     </button>
                   </Link>
                   <Link href="/contact">
@@ -165,6 +166,10 @@ const Landing = () => {
             </div>
           </div>
         </div>
+      </section>
+
+      <section>
+        <ScheduleMeetCTA />
       </section>
 
       {/* Technologies Section */}

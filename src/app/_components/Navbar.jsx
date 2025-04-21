@@ -9,14 +9,14 @@ const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
 
   return (
-    <nav className="sticky top-0 left-0 w-screen flex justify-between items-center px-6 md:px-20 text-[#5D2340] z-50 bg-[#FDF2F8]">
+    <nav className="w-screen flex justify-between items-center px-6 md:px-20 text-[#5D2340] z-50 bg-[#FDF2F8]">
       {/* Logo */}
       <div className="flex items-center justify-start">
         <Image
           src="/assets/BrandLogoMD.png"
           alt="logo"
-          width={100}
-          height={100}
+          width={150}
+          height={150}
         />
       </div>
 
