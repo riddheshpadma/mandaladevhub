@@ -5,12 +5,7 @@ import Navbar from "./Navbar";
 import ContactUs from "./ContactUs";
 import Link from "next/link";
 import {
-  Code,
-  Palette,
-  Smartphone,
-  ShoppingCart,
-  Server,
-  BarChart2,
+ 
   ChevronRight,
   Check,
 } from "lucide-react";
