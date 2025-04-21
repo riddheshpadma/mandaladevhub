@@ -11,6 +11,7 @@ import {
 import Image from "next/image";
 import ScheduleModal from "../_components/ScheduleForm";
 import Link from "next/link";
+import React from "react";
 
 const ScheduleMeeting = () => {
   const [selectedMeeting, setSelectedMeeting] = useState<string | null>(null);

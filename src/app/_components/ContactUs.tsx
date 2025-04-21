@@ -36,7 +36,7 @@ const ContactUs = () => {
               </div>
               <div className="relative max-w-4xl mt-16 mb-6 rounded-3xl overflow-hidden shadow-2xl shadow-gray-500 aspect-[16/9] md:aspect-auto h-[50vh] md:h-[75vh] lg:h-[85vh] w-full">
                 <Image
-                  src="/assets/about.webp"
+                  src="/assets/contactus.jpg"
                   alt="Services"
                   layout="fill"
                   objectFit="cover"
@@ -148,8 +148,8 @@ const ContactUs = () => {
           </div>
         </div>
       </section>
-      <div className="flex justify-center items-center py-5">
-        <p className="text-xs md:text-sm">
+      <div className="flex justify-center items-center py-5 bg-[#5F213F]">
+        <p className="text-xs text-white md:text-sm">
           &copy; 2025 riddheshpadma.dev . All rights reserved.
         </p>
       </div>
