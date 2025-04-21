@@ -18,39 +18,7 @@ import ScheduleMeetCTA from "./ScheduleMeetCTA";
 import React from "react";
 
 const Landing = () => {
-  const services = [
-    {
-      icon: <Code className="w-8 h-8" />,
-      title: "Web Development",
-      description: "Custom websites with modern frameworks",
-    },
-    {
-      icon: <Smartphone className="w-8 h-8" />,
-      title: "Mobile Apps",
-      description: "iOS & Android applications",
-    },
-    {
-      icon: <Palette className="w-8 h-8" />,
-      title: "UI/UX Design",
-      description: "Intuitive user experiences",
-    },
-    {
-      icon: <ShoppingCart className="w-8 h-8" />,
-      title: "E-commerce",
-      description: "Online stores that convert",
-    },
-    {
-      icon: <Server className="w-8 h-8" />,
-      title: "Custom Software",
-      description: "Tailored business solutions",
-    },
-    {
-      icon: <BarChart2 className="w-8 h-8" />,
-      title: "Digital Marketing",
-      description: "Growth-focused strategies",
-    },
-  ];
-
+  
   const technologies = [
     { name: "React", icon: "/assets/tech/react.png" },
     { name: "Node.js", icon: "/assets/tech/nodejs.png" },

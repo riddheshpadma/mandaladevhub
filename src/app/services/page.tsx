@@ -81,7 +81,7 @@ const page = () => {
               AI-Enhanced Solutions
             </h2>
             <p className="max-w-3xl mx-auto text-gray-600">
-              We don't just build software - we create intelligent systems that grow with your business
+              We don&apos;t just build software - we create intelligent systems that grow with your business
             </p>
           </div>
 

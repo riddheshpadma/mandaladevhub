@@ -41,28 +41,28 @@ const About = () => {
     }
   ];
 
-  const team = [
-    {
-      name: "Riddhesh Padma",
-      role: "Founder & CEO",
-      image: "/assets/team/alex.jpg",
-    },
-    {
-      name: "Samira Khan",
-      role: "Lead Developer",
-      image: "/assets/team/samira.jpg",
-    },
-    {
-      name: "Jordan Lee",
-      role: "UX Designer",
-      image: "/assets/team/jordan.jpg",
-    },
-    {
-      name: "Taylor Smith",
-      role: "Marketing Head",
-      image: "/assets/team/taylor.jpg",
-    },
-  ];
+  // const team = [
+  //   {
+  //     name: "Riddhesh Padma",
+  //     role: "Founder & CEO",
+  //     image: "/assets/team/alex.jpg",
+  //   },
+  //   {
+  //     name: "Samira Khan",
+  //     role: "Lead Developer",
+  //     image: "/assets/team/samira.jpg",
+  //   },
+  //   {
+  //     name: "Jordan Lee",
+  //     role: "UX Designer",
+  //     image: "/assets/team/jordan.jpg",
+  //   },
+  //   {
+  //     name: "Taylor Smith",
+  //     role: "Marketing Head",
+  //     image: "/assets/team/taylor.jpg",
+  //   },
+  // ];
 
   return (
     <div className="bg-pink-50">
@@ -170,7 +170,7 @@ const About = () => {
               </p>
               <div className="bg-pink-50 p-6 rounded-xl border border-pink-100">
                 <p className="text-xl font-bold text-[#5C213C]">
-                  "Our mission: To bridge the gap between cutting-edge AI and practical business solutions."
+                &quot;Our mission: To bridge the gap between cutting-edge AI and practical business solutions.&quot;
                 </p>
               </div>
             </div>
@@ -327,7 +327,7 @@ const About = () => {
                 To Our Community
               </h3>
               <p className="text-gray-600">
-                We're committed to ethical AI development that benefits society while minimizing risks.
+                We&apos;re committed to ethical AI development that benefits society while minimizing risks.
               </p>
             </div>
           </div>
