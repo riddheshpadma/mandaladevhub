@@ -1,5 +1,5 @@
-import connect from "@/lib/db";
-import Contact from "@/lib/modals/contactus";
+import connect from "../../..//lib/db";
+import Contact from "../../../lib/modals/contactus";
 import { NextResponse } from "next/server";
 import { allowedOrigins } from "../ReqOrigin"; // Import allowed origins
 

@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import dbConnect from '../../../lib/db';
 import Lead from '../../../lib/modals/Lead';
-import { validateLeadForm } from '@/utils/formValidation';
+import { validateLeadForm } from '../../../utils/formValidation';
 import { allowedOrigins } from "../ReqOrigin"; // Import allowed origins
 
 
