@@ -26,7 +26,7 @@ interface FormErrors {
 }
 
 import axios from 'axios';
-import { validateLeadForm } from '@/utils/formValidation';
+import { validateLeadForm } from '../../utils/formValidation';
 
 export default function GetStarted() {
   const [formData, setFormData] = useState({
